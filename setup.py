@@ -8,8 +8,8 @@ setup(
     description = 'authenticating.com-python',
     author = 'SmokingGoaT',
     license = 'MIT',
-    install_requires = [],
-    setup_requires = ['pytest-runner'],
-    tests_requires = ['pytests'],
-    test_suite = 'tests'
+    install_requires = [
+        'requests',
+        'requests_oauthlib',
+    ]
 )
