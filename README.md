@@ -1,1 +1,1 @@
-# Authenticating.com_PythonLibrary
+# Authenticating.com API Python Library
