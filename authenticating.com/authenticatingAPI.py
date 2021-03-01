@@ -35,7 +35,7 @@ class AuthenticatingAPI:
 
     @requests_exception_handling
     def create_user(self, payload):
-        if payload != dict():
+        if payload is not dict():
             return "params need to be in dict format, key must match API docs input format."
         else:
             vars = SimpleNamespace(**payload)
@@ -52,7 +52,7 @@ class AuthenticatingAPI:
 
     @requests_exception_handling
     def submit_user_consent(self, payload):
-        if payload != dict():
+        if payload is not dict():
             return "params need to be in dict format, key must match API docs input format."
         else:
             vars = SimpleNamespace(**payload)
@@ -71,7 +71,7 @@ class AuthenticatingAPI:
 
     @requests_exception_handling
     def get_user(self, payload):
-        if payload != dict():
+        if payload is not dict():
             return "params need to be in dict format, key must match API docs input format."
         else:
             vars = SimpleNamespace(**payload)
@@ -82,7 +82,7 @@ class AuthenticatingAPI:
 
     @requests_exception_handling
     def update_user(self, payload):
-        if payload != dict():
+        if payload is not dict():
             return "params need to be in dict format, key must match API docs input format."
         else:
             vars = SimpleNamespace(**payload)
@@ -93,7 +93,7 @@ class AuthenticatingAPI:
 
     @requests_exception_handling
     def get_motor_vehicle_record_verification(self, payload):
-        if payload != dict():
+        if payload is not dict():
             return "paramsneed to be in dict format, key must match API docs input format."
         else:
             vars = SimpleNamespace(**payload)

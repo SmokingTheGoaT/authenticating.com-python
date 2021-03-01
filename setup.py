@@ -12,5 +12,6 @@ setup(
     install_requires = [
         'requests',
         'requests_oauthlib',
+        'simplejson',
     ]
 )
