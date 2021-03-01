@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 
 setup(
     name = 'authenticating-python',
-    packages = ['authenticating',],
+    packages = ['authenticating', 'authenticating.utils'],
     version = '0.1.1',
     description = 'authenticating.com-python',
     author = 'SmokingGoaT',
