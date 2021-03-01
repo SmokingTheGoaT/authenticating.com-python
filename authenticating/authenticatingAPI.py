@@ -106,7 +106,8 @@ class AuthenticatingAPI:
             else:
                 return self.__post_data(self.url.mvr_v_url, payload)
 
-        
+    def __str__(self):
+        print('testing works')    
 
 
 
