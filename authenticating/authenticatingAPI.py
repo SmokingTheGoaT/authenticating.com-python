@@ -94,7 +94,7 @@ class AuthenticatingAPI:
     @requests_exception_handling
     def get_motor_vehicle_record_verification(self, payload):
         if payload is not dict():
-            return "paramsneed to be in dict format, key must match API docs input format."
+            return "params need to be in dict format, key must match API docs input format."
         else:
             vars = SimpleNamespace(**payload)
             if not vars.userAccessCode:
@@ -106,8 +106,62 @@ class AuthenticatingAPI:
             else:
                 return self.__post_data(self.url.mvr_v_url, payload)
 
-    def __str__(self):
-        print('testing works')    
+    @requests_exception_handling
+    def create_criminal_background(self, payload):
+        if payload is not dict():
+            return "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.generate_criminal_background_url, payload)
+
+    @requests_exception_handling
+    def upload_id(self, payload):
+        if payload is not dict:
+            return  "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            ##add base64 encoded verification
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.upload_id_url, payload)
+    
+    @requests_exception_handling
+    def upload_id_enhanced(self, payload):
+        if payload is not dict:
+            return  "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.upload_id_enhanced_url, payload)
+
+    @requests_exception_handling
+    def ssn_verify(self, payload):
+        if payload is not dict:
+            return "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.ssn_verify_url, payload)
+
+    @requests_exception_handling
+    def get_criminal_history(self, payload):
+        if payload is not dict:
+            return "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.seven_criminal_report_url, payload)
+            
 
 
 
