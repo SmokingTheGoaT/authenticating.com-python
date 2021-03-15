@@ -48,6 +48,12 @@ class URLs:
     def upload_id_enhanced_url(self):
         return self.base_url + self.upload_id_enhanced
     
+    def check_upload_id_url(self):
+        return self.base_url + self.check_upload_id
+
+    def verify_upload_id_url(self):
+        return self.base_url + self.verify_upload_id
+
     def ssn_verify_url(self):
         return self.base_url + self.ssn_verify
         

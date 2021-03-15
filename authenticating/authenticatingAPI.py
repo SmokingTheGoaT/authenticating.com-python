@@ -141,6 +141,28 @@ class AuthenticatingAPI:
                 return self.__post_data(self.url.upload_id_enhanced_url, payload)
 
     @requests_exception_handling
+    def check_upload_id(self, payload):
+        if payload is not dict:
+            return  "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.check_upload_id_url, payload)
+    
+    @requests_exception_handling
+    def verify_upload_id(self, payload):
+        if payload is not dict:
+            return  "params need to be in dict format, key must match API docs input format."
+        else:
+            vars = SimpleNamespace(**payload)
+            if not vars.userAccessCode:
+                raise "missing userAccessCode"
+            else:
+                return self.__post_data(self.url.verify_upload_id_url, payload)
+
+    @requests_exception_handling
     def ssn_verify(self, payload):
         if payload is not dict:
             return "params need to be in dict format, key must match API docs input format."
@@ -161,6 +183,7 @@ class AuthenticatingAPI:
                 raise "missing userAccessCode"
             else:
                 return self.__post_data(self.url.seven_criminal_report_url, payload)
+
             
 
 

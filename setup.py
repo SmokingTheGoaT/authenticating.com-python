@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 setup(
     name = 'authenticating-python',
     packages = ['authenticating', 'authenticating.utils'],
-    version = '0.1.2',
+    version = '0.1.3',
     description = 'authenticating.com-python',
     author = 'SmokingGoaT',
     license = 'MIT',
